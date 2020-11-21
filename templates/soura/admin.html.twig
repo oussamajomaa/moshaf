@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}new part soura!
+{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+	<div class="container my-5">
+		
+		
+		<div class="row">
+			<div class="col bg-light m-1" id="sansAccent">
+				<h3 class="text-center alert alert-success">الآيات بدون تشكيل</h3>
+				{{ form_start (formAya) }}
+				<p class="text-right">نص الآية</p>
+				{{ form_row (formAya.content) }}
+				<p class="text-right">رقم الآية</p>
+				{{ form_row (formAya.number, {'value':app.request.query.get('number')+1}) }}
+				<p class="text-right">اختر السورة</p>
+				{{ form_row (formAya.soura,{'value':app.request.query.get('soura')}) }}
+
+				<button class="btn btn-primary" id="ayaNonAccent">حفظ</button>
+				{{ form_end (formAya) }}
+
+			</div>
+
+			<div class="col bg-light m-1" id="avecAccent">
+				<h3 class="text-center alert alert-success">الآيات مشكلة</h3>
+				{{ form_start (formAyaAccent) }}
+				<p class="text-right">نص الآية</p>
+				{{ form_row (formAyaAccent.content) }}
+				<p class="text-right">رقم الآية</p>
+				{{ form_row (formAyaAccent.number, {'value':app.request.query.get('number')+1}) }}
+				<p class="text-right">اختر السورة</p>
+				{{ form_row (formAyaAccent.soura,{'value':app.request.query.get('soura')}) }}
+
+				<button class="btn btn-primary" id="ayaAccent">حفظ</button>
+				{{ form_end (formAyaAccent) }}
+
+			</div>
+			
+
+			<div class="col m-1">
+				<div class="row">
+					<div class="col bg-light">
+						<h3 class="text-center alert alert-success">السور</h3>
+						{{ form_start (formSoura) }}
+                        <p class="text-right">أدخل السورة</p>
+						{{ form_row (formSoura.title) }}
+                        <p class="text-right">أدخل رقم السورة</p>
+                        {{ form_row (formSoura.number) }}
+						<button class="btn btn-primary">حفظ</button>
+						{{ form_end (formSoura) }}
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col bg-light">
+                        <h3 class="text-center alert alert-success">الأجزاء</h3>
+						{{ form_start (formPart) }}
+                        <p class="text-right">اختر السورة</p>
+						{{ form_row (formPart.soura, {'label':false})}}
+                        <p class="text-right">اختر الجزء</p>
+                        {{ form_row (formPart.part, {'label':false})}}
+
+						<button class="btn btn-primary" id="part">حفظ</button>
+						{{ form_end (formPart) }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+

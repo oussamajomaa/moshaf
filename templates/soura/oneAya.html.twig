@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}show one aya!
+{% endblock %}
+
+{% block body %}
+    <div class="container my-5 shadow-lg p-3 mb-5 bg-white rounded">
+		<div class="bg-light text-justify p-3" style="line-height:2em">
+        <h4>سورة {{ayaAccent.soura.title}}</h4>
+        <h5 class="text-center">بسم الله الرحمن الرحيم</h5>
+        {{ayaAccent.content}} 
+        <span class="text-danger">
+			&#9789;{{ayaAccent.number}}&#9790;
+		</span>
+        <h5 class="text-left">صدق الله العظيم</h5>
+        </div>
+    </div>
+{% endblock %}

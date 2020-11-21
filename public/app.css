@@ -1,0 +1,32 @@
+@import url(http://fonts.googleapis.com/earlyaccess/amiri.css);
+/* font-family: Amiri, serif; */
+
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+/* font-family: Droid Arabic Kufi, serif; */
+
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
+/* font-family: Droid Arabic Naskh, serif; */
+
+@import url(http://fonts.googleapis.com/earlyaccess/lateef.css);
+/* font-family: Scheherazade, serif; */
+
+@import url(http://fonts.googleapis.com/earlyaccess/scheherazade.css);
+/* font-family: Lateef, serif; */
+
+@import url(http://fonts.googleapis.com/earlyaccess/thabit.css);
+/* font-family: Thabit, serif; */
+
+
+
+
+body{
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+    text-align: right;
+    font-family: Droid Arabic Kufi, serif;
+}
+
+
+
+

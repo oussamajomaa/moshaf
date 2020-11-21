@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}show soura!
+{% endblock %}
+
+{% block body %}
+
+	<div class="container my-5 shadow-lg p-3 mb-5 bg-white rounded">
+		<select class="col-4" id="soura" class="mt-3">
+			<option  value="" selected disabled hidden>قم بالاختيار هنا</option>
+			{% for soura in souras %}
+				<option value="{{soura.id}}">{{ soura.title }}</option>
+			{% endfor %}
+		</select>
+	</div>
+
+	<script>
+		document.getElementById('soura').addEventListener("change", function () {
+			const value = this.value
+			window.location = `/soura/${value}/show`
+		})
+		
+	</script>
+
+{% endblock %}

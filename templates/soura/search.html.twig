@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}search word!
+{% endblock %}
+
+{% block body %}
+<style>
+	span{
+		color:red;
+	}
+
+	.highlight{
+		color:red;
+	}
+</style>
+
+	<div class="container my-5 shadow-lg p-3 mb-5 bg-white rounded">
+		
+		{% if array %}
+			<div class="alert alert-danger row">
+				<div class="col">
+					عدد تكرار كلمة
+					<span class="text-danger">
+						<strong>
+							{{word}}
+						</strong>
+					</span>
+					{{count}}
+				</div>
+			</div>
+			{% set i = 1 %}
+			{% for aya in array %}
+				<div class="alert alert-success mb-1 row shadow-lg p-3 bg-white rounded">
+					<div class="col-8 " >
+						<a class="nav-link alert-success aya" id="yaya{{i}}" href="{{ path ('oneAya',{'id':aya.id})}}">{{aya.aya}}</a>
+					</div>
+					<div class="col-3 ">
+						{{aya.soura.title}} {{aya.number}}
+					</div>
+					<div class="col-1">
+						{{aya.repeat}}
+					</div>
+				</div>
+				{% set i = i + 1 %}
+			{% endfor %}
+
+		{% endif %}
+	</div>
+
+	
+{% endblock %}
+
+{% block javascripts %}
+
+	<script>
+		let word = "{{word}}"
+		$("body").highlight(word);
+	</script>
+{% endblock %}
