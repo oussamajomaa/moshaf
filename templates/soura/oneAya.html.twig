@@ -4,15 +4,17 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container my-5 shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="container my-5 shadow-lg p-3 mb-5 bg-white rounded aya h3">
 		<div class="bg-light text-justify p-3" style="line-height:2em">
-        <h4>سورة {{ayaAccent.soura.title}}</h4>
-        <h5 class="text-center">بسم الله الرحمن الرحيم</h5>
+        <h3 class="font-weight-bold">سورة {{ayaAccent.soura.title}}</h3>
+        {% if ayaAccent.soura.title != "التوبة" %}
+				<img src="/img/besm.png" class="w-50" alt="" style="display:block; margin:auto">
+			{% endif %}
         {{ayaAccent.content}} 
-        <span class="text-danger">
-			&#9789;{{ayaAccent.number}}&#9790;
-		</span>
-        <h5 class="text-left">صدق الله العظيم</h5>
+        <img src="/img/rightmark.png" style="max-width:16px" >
+			<span class="aya h4 text-success bolder " >{{ayaAccent.number}}</span>
+        <img src="/img/leftmark.png" style="max-width:16px" >
+        <img src="/img/sadaka.png" class="mr-auto" style="display:block; width:15%">
         </div>
     </div>
 {% endblock %}

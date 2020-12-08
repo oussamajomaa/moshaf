@@ -33,7 +33,7 @@ class AyaAccentType extends AbstractType
             'class' => Soura::class,
             'query_builder' => function (SouraRepository $er) {
                 return $er->createQueryBuilder('u')
-                ->where('u.id = 7');
+                ->where('u.id = 10');
             }
             
         ])

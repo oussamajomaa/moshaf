@@ -4,37 +4,55 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container my-5 shadow-lg p-3 mb-5  bg-white rounded">
-		<img src="/img/logo.jpg" class="w-100" alt="">
-		<div class="bg-light text-justify p-3" style="line-height:2em">
-			عدد الكلمات: {{count}}
-			عدد الآيات: {{countAya}}
-			{% for soura in souras %}
-
-				<div class="row ">
-					<div class="col">
-						<a href="{{ path ('soura_show',{'id':soura.id})}}">
-							<h3 class="badge badge-success">سورة
-								{{soura.title}}</h3>
-						</a>
+<a id="back2Top" title="Back to top" href="#">&#10148;</a>
+		<div class="container-fluid my-5 shadow-lg p-3 pt-5" >
+			<div class="row d-flex justify-content-center">
+				{% for soura in souras %}
+					<div class="col-xl-1 col-lg-2 col-md-3 col-sm-4  mb-1  btn btn-light p-1 text-center mx-1">
+						<a href="#ancre{{soura.id}}" class=" text-success">{{soura.id}} {{soura.title}}</a>
 					</div>
-					<div class="col text-left">
-						<h3 class="badge badge-danger">عدد الآيات:
-							{{soura.ayas | length}}</h3>
-					</div>
-				</div>
-				{% if soura.title != "التوبة" %}
-					<h4 class="text-center">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</h4>
-				{% endif %}
-				{% for aya in soura.ayaAccents %}
-					<span class="aya">{{aya.content}}</span>
-					<span class="text-danger">
-						&#9789;{{aya.number}}&#9790;
-					</span>
 				{% endfor %}
-				<h5 class="text-left">صدق الله العظيم</h5>
-			{% endfor %}
-
+			</div>
+					
 		</div>
-	</div>
+		<div class="container my-5 shadow-lg bg-white rounded" >
+			<img src="/img/logo.jpg" class="w-100" alt="" >
+			<div class="bg-light text-justify p-3 " style="line-height:2em" >
+				عدد الكلمات: {{count}}
+				عدد الآيات: {{countAya}}
+				{% for soura in souras %}
+					<hr>
+					<div class="row mb-5" id="ancre{{soura.id}}">
+						<div class="col">
+							<a href="{{ path ('soura_show',{'id':soura.id})}}">
+								<h3 class="badge badge-success" >سورة
+									{{soura.title}}</h3>
+							</a>
+						</div>
+						<div class="col text-left" >
+							<h3 class="badge badge-danger" >عدد الآيات:
+								{{soura.ayas | length}}</h3>
+						</div>
+					</div>
+					{% if soura.title != "التوبة" %}
+					<img src="/img/besm.png" class="w-50" alt="" style="display:block; margin:auto">
+
+					{% endif %}
+					{% for aya in soura.ayaAccents %}
+						<span class="aya h3 " >{{aya.content}}</span>
+							
+						<img src="/img/rightmark.png" style="max-width:16px" >
+						<span class="aya h4 text-success bolder " >
+							{{aya.number}}
+						</span>
+						<img src="/img/leftmark.png" style="max-width:16px" >
+
+					{% endfor %}
+					<img src="/img/sadaka.png" class="mr-auto" style="display:block; width:15%">
+
+				{% endfor %}
+
+			</div>
+		</div>
+
 {% endblock %}

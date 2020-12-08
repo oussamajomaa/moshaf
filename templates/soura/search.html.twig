@@ -14,7 +14,7 @@
 	}
 </style>
 
-	<div class="container my-5 shadow-lg p-3 mb-5 bg-white rounded">
+	<div class="container my-5 shadow-lg p-3 mb-5 bg-white rounded aya h3">
 		
 		{% if array %}
 			<div class="alert alert-danger row">
@@ -28,11 +28,22 @@
 					{{count}}
 				</div>
 			</div>
+			<div class="alert alert-success mb-1 row shadow-lg p-3 bg-white rounded">
+				<div class="col-8 " >
+					الآية
+				</div>
+				<div class="col-3 ">
+					السورة
+				</div>
+				<div class="col-1">
+					التكرار
+				</div>
+			</div>
 			{% set i = 1 %}
 			{% for aya in array %}
 				<div class="alert alert-success mb-1 row shadow-lg p-3 bg-white rounded">
 					<div class="col-8 " >
-						<a class="nav-link alert-success aya" id="yaya{{i}}" href="{{ path ('oneAya',{'id':aya.id})}}">{{aya.aya}}</a>
+						<a class="nav-link alert-success" id="yaya{{i}}" href="{{ path ('oneAya',{'id':aya.id})}}">{{aya.aya}}</a>
 					</div>
 					<div class="col-3 ">
 						{{aya.soura.title}} {{aya.number}}

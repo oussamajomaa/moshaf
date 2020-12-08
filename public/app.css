@@ -25,8 +25,36 @@ body{
     direction: rtl;
     text-align: right;
     font-family: Droid Arabic Kufi, serif;
+    
+}
+
+.aya{
+    font-family: Scheherazade, serif;
+    
+    line-height: 60px !important;
 }
 
 
-
+/* arrow go top */
+#back2Top {
+    width: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+    transform: rotate(270deg);
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #DDD;
+    color: #555;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+}
+#back2Top:hover {
+    background-color: #DDF;
+    color: #000;
+}
 
